@@ -22,6 +22,7 @@
             placeholder="Enter a city.."
             required
             class="search-input"
+            id="search-input"
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
@@ -29,16 +30,17 @@
       <main>
         <div class="current-weather">
           <div>
-            <h1 class="current-city">Paris</h1>
+            <h1 class="current-city" id="current-city">Paris</h1>
             <p class="current-details">
               <span id="current-date">Saturday 15:32</span>, moderate rain
               <br />
-              Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
+              Humidity: <strong><span id="humidity">87</span>%</strong>, Wind:
+              <strong><span id="wind">7.2</span>km/h</strong>
             </p>
           </div>
           <div class="current-temperature">
             <span class="current-temperature-icon">☀️</span
-            ><span class="current-temperature-value" id="api-temperature"
+            ><span class="current-temperature-value" id="current-temperature"
               >24</span
             ><span class="current-temperature-unit">°C</span>
           </div>
@@ -47,9 +49,20 @@
       <footer>
         <p>
           This project was coded by
-          <a href="#" target="_blank">Camila Ferreira</a> and is
-          <a href="#" target="_blank"> on GitHub</a> and
-          <a href="#" target="_blank">hosted on Netlify</a>
+          <a href="https://github.com/camilapferreira" target="_blank"
+            >Camila Ferreira</a
+          >
+          and is
+          <a
+            href="https://github.com/camilapferreira/weather-app"
+            target="_blank"
+          >
+            on GitHub</a
+          >
+          and
+          <a href="https://weather-api10.netlify.app/" target="_blank"
+            >hosted on Netlify</a
+          >
         </p>
       </footer>
     </div>

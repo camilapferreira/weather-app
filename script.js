@@ -1,29 +1,27 @@
-// City name update
-function searchCityWeather(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("form .search-input");
-  let cityName = cityInput.value;
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = cityName;
-  apiCity = cityName;
-  fetchData();
-}
-
-//Updating with API response
 function displayTemperature(response) {
-  let temperatureElement = document.querySelector("#api-temperature");
-  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
-  console.log(response.data.city);
+  let temperatureElement = document.querySelector("#current-temperature");
+  let temperature = Math.round(response.data.temperature.current);
+  temperatureElement.innerHTML = temperature;
+
+  let cityElement = document.querySelector("#current-city");
+  cityElement.innerHTML = response.data.city;
+
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.temperature.humidity;
+
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = response.data.wind.speed;
 }
 
-function fetchData() {
+function search(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-input");
+  let apiCity = searchInput.value;
   let apiKey = "44b4d9f5e3a3baf490c33c5519ot4f0a";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${apiCity}&key=${apiKey}`;
-
   axios.get(apiUrl).then(displayTemperature);
 }
 
-let apiCity = "paris";
 // Date and Time
 
 function formatDate(date) {
@@ -51,7 +49,7 @@ function formatDate(date) {
 }
 
 let searchCity = document.querySelector("#search-form");
-searchCity.addEventListener("submit", searchCityWeather);
+searchCity.addEventListener("submit", search);
 
 let date = document.querySelector("#current-date");
 let hourDay = new Date();
