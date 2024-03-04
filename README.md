@@ -9,9 +9,13 @@ WeatherApp is a simple yet powerful web application that allows users to search 
 - Show current date and time
 - Responsive design for desktop and mobile devices (on development)
 
-### Installation
+### Weather app access
+https://weather-api10.netlify.app/
+
+## Installation
 
 Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/yourusername/WeatherApp.git
+
